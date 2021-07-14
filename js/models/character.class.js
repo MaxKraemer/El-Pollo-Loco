@@ -34,7 +34,7 @@ class Character extends MovableObject{
             this.img = this.imageCache[path];
             this.currentImage++;
             
-        }, 130);
+        }, 120);
 
         
 
