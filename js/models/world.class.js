@@ -48,27 +48,10 @@ class World {
         
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
-        this.backgroundObjects.forEach(backgroundObject => {
-
-            this.ctx.drawImage(backgroundObject.img, backgroundObject.x, backgroundObject.y, backgroundObject.width, backgroundObject.height);
-
-        });
-
-
-        this.ctx.drawImage(this.character.img, this.character.x, this.character.y, this.character.width, this.character.height);
-
-        this.enemies.forEach(enemy => {
-
-            this.ctx.drawImage(enemy.img, enemy.x, enemy.y, enemy.width, enemy.height);
-
-        });
-
-        this.clouds.forEach(cloud => {
-
-            this.ctx.drawImage(cloud.img, cloud.x, cloud.y, cloud.width, cloud.height);
-
-        });
-
+        this.addObjectsToMap(this.backgroundObjects);
+        this.addToMap(this.character);
+        this.addObjectsToMap(this.clouds);
+        this.addObjectsToMap(this.enemies);
         
 
 
@@ -77,6 +60,34 @@ class World {
             
             self.draw();
         });
+
+    }
+
+        addObjectsToMap(objects){
+
+            objects.forEach(o => {
+
+                this.addToMap(o);
+    
+            });  
+    }
+
+       addToMap(mo){
+
+        if (mo.otherDirection) {
+            
+            this.ctx.save();
+            this.ctx.translate(mo.width, 0);
+            this.ctx.scale(-1, 1);
+            mo.x = mo.x * -1;
+        }
+        
+        this.ctx.drawImage(mo.img, mo.x, mo.y, mo.width, mo.height);
+        
+        if (mo.otherDirection) {
+            mo.x = mo.x * -1;
+            this.ctx.restore();
+        }
 
     }
 }

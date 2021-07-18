@@ -3,6 +3,7 @@ class Character extends MovableObject{
     height = 300;
     width = 150;
     y = 140;
+    speed = 20;
     IMAGES_WALKING =[
 
         'img/2.Secuencias_Personaje-Pepe-correcciขn/2.Secuencia_caminata/W-21.png',
@@ -33,7 +34,28 @@ class Character extends MovableObject{
         setInterval(() => {
 
             if(this.world.keyboard.RIGHT) {
-            
+
+            this.x += this.speed;
+            this.otherDirection = false;
+
+            }
+
+            if(this.world.keyboard.LEFT) {
+
+                this.x -= this.speed;
+                this.otherDirection = true;
+    
+                }
+
+        }, 2000/60);
+
+
+
+        setInterval(() => {
+
+            if(this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
+
+            //walkanimation
             let i = this.currentImage % this.IMAGES_WALKING.length;
             let path = this.IMAGES_WALKING[i];
             this.img = this.imageCache[path];
@@ -41,7 +63,7 @@ class Character extends MovableObject{
 
             }
             
-        }, 120);
+        }, 50);
 
         
 
