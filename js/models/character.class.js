@@ -2,7 +2,7 @@ class Character extends MovableObject{
 
     height = 300;
     width = 150;
-    y = 140;
+    y = 50;
     speed = 20;
     IMAGES_WALKING =[
 
@@ -15,6 +15,22 @@ class Character extends MovableObject{
 
     ];
 
+    JUMP_IMAGES =[
+
+        'img/2.Secuencias_Personaje-Pepe-correcciขn/3.Secuencia_salto/J-31.png',
+        'img/2.Secuencias_Personaje-Pepe-correcciขn/3.Secuencia_salto/J-32.png',
+        'img/2.Secuencias_Personaje-Pepe-correcciขn/3.Secuencia_salto/J-33.png',
+        'img/2.Secuencias_Personaje-Pepe-correcciขn/3.Secuencia_salto/J-34.png',
+        'img/2.Secuencias_Personaje-Pepe-correcciขn/3.Secuencia_salto/J-35.png',
+        'img/2.Secuencias_Personaje-Pepe-correcciขn/3.Secuencia_salto/J-36.png',
+        'img/2.Secuencias_Personaje-Pepe-correcciขn/3.Secuencia_salto/J-37.png',
+        'img/2.Secuencias_Personaje-Pepe-correcciขn/3.Secuencia_salto/J-38.png',
+        'img/2.Secuencias_Personaje-Pepe-correcciขn/3.Secuencia_salto/J-39.png',
+        'img/2.Secuencias_Personaje-Pepe-correcciขn/3.Secuencia_salto/J-40.png'
+
+
+    ];
+
     world;
     running_sound = new Audio('audio/running.mp3');
 
@@ -24,7 +40,8 @@ class Character extends MovableObject{
 
         super().loadImage('img/2.Secuencias_Personaje-Pepe-correcciขn/2.Secuencia_caminata/W-21.png');
         this.loadImages(this.IMAGES_WALKING);
-
+        this.loadImages(this.JUMP_IMAGES);
+        this.applyGravity();
         this.animate();
     
     }
@@ -59,10 +76,16 @@ class Character extends MovableObject{
 
         setInterval(() => {
 
-            if(this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
+            if (this.AboveGround()) {
+                
+                this.playAnimation(this.JUMP_IMAGES);
+            } else{
 
-            this.playAnimation(this.IMAGES_WALKING);
+                if(this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
 
+                this.playAnimation(this.IMAGES_WALKING);
+
+            }
             }
             
         }, 50);
