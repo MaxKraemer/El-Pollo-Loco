@@ -3,82 +3,66 @@ let world;
 let keyboard = new Keyboard();
 
 
-function init(){
+function init() {
     
+}
+
+function startGame() {
+    document.getElementById('startScreen').classList.add('d-none');
+    document.getElementById('canvas').classList.remove('d-none');
+    // document.getElementById('container').classList.add('d-none');
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
-    
-    console.log('My Character is', world.character);
+}
+
+function fullScreen() {
+    let canvas = document.getElementById('canvas');
+    canvas.requestFullscreen();
+}
+
+function reset() {
+    location.reload();
 }
 
 window.addEventListener("keydown", (e) => {
 
-    if(e.keyCode == 39) {
-
-        keyboard.RIGHT = true;
-    }
-
-    if(e.keyCode == 37){
-
-        keyboard.LEFT = true;
-    }
-
-    if(e.keyCode == 38) {
-
-        keyboard.UP = true;
-    }
-
-    if(e.keyCode == 40){
-
-        keyboard.DOWN = true;
-    }
-
-    if(e.keyCode == 32){
-
+    if(e.key == " ") {
         keyboard.SPACE = true;
     }
-
-    if(e.keyCode == 68){
-
+    if(e.key == "ArrowRight") {
+        keyboard.RIGHT = true;
+    }
+    if(e.key == "ArrowLeft") {
+        keyboard.LEFT = true;
+    }
+    if(e.key == "ArrowDown") {
+        keyboard.DOWN = true;
+    }
+    if(e.key == "ArrowUp") {
+        keyboard.UP = true;
+    }
+    if(e.key == "d") {
         keyboard.D = true;
     }
-
-    
-
 });
 
 window.addEventListener("keyup", (e) => {
-
-    if(e.keyCode == 39) {
-
-        keyboard.RIGHT = false;
-    }
-
-    if(e.keyCode == 37){
-
-        keyboard.LEFT = false;
-    }
-
-    if(e.keyCode == 38) {
-
-        keyboard.UP = false;
-    }
-
-    if(e.keyCode == 40){
-
-        keyboard.DOWN = false;
-    }
-
-    if(e.keyCode == 32){
-
+    if(e.key == " ") {
         keyboard.SPACE = false;
     }
-
-    if(e.keyCode == 68){
-
+    if(e.key == "ArrowRight") {
+        keyboard.RIGHT = false;
+    }
+    if(e.key == "ArrowLeft") {
+        keyboard.LEFT = false;
+    }
+    if(e.key == "ArrowDown") {
+        keyboard.DOWN = false;
+    }
+    if(e.key == "ArrowUp") {
+        keyboard.UP = false;
+    }
+    if(e.key == "d") {
         keyboard.D = false;
     }
-
-    console.log(e);
-
 });

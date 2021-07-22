@@ -1,11 +1,114 @@
-body{
+@font-face {
+    font-family: 'ShadowsIntoLight';
+    src: url('./fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+}
+
+.d-none {
+    display: none !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+canvas {
+    background-color: black;
+}
+
+#container {
+    
+    height: 480px;
+    position: relative;
+}
+
+#startScreen {
+    background: url('img/9.Intro _ Outro Image/Start Screen/Opción2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 720px;
+    height: 480px;
+}
+
+.controllerRow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.controllerBox {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-canvas {
+.controllerBox {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
 
-    background-color: black;
+#startButton {
+    position: absolute;
+    top: 30px;
+}
 
+.btn {
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    background-color: #ee9147;
+    color: white;
+    font-family: 'ShadowsIntoLight';
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 225ms ease-in-out;
+}
+
+.btn:hover {
+    background-color: #fcd89d;
+    transition: all 225ms ease-in-out;
+}
+
+.gameOverScreen {
+    width: 720px;
+    height: 480px;
+    position: absolute;
+    display: flex;
+    top: 150px;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 10;
+}
+
+#lostGame {
+    background-image: url('img/9.Intro _ Outro Image/_Game over_ screen/1.you lost.png');
+    background-size: contain;
+}
+
+#gameOver {
+    background-image: url('img/9.Intro _ Outro Image/_Game over_ screen/3.Game over.png');
+    background-size: contain;
+}
+
+.playAgainBtn {
+    margin-bottom: 30px;
 }
