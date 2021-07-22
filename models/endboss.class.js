@@ -59,14 +59,7 @@ class Endboss extends MovableObject {
 
         this.animate();
     }
-    // FUNKTIONIERT NICHT!!!
-    // checkCharacter() {
-    //     setInterval(() => {
-    //         if (this.characterReachCheckpoint == true) {
-    //             this.animate();
-    //         }
-    //     }, 1000 / 60);
-    // }
+  
 
     animate() {
 
