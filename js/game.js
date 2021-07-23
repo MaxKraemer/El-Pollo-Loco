@@ -3,6 +3,7 @@ let world;
 let keyboard = new Keyboard();
 
 
+
 function init() {
     
 }
@@ -15,10 +16,6 @@ function startGame() {
     world = new World(canvas, keyboard);
 }
 
-function fullScreen() {
-    let canvas = document.getElementById('canvas');
-    canvas.requestFullscreen();
-}
 
 function reset() {
     location.reload();

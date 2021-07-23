@@ -1,8 +1,8 @@
 class Chicken extends MovableObject {
 
 
-    width = 60;
-    height = 60;
+    width = 80;
+    height = 80;
     energy = 5;
 
     IMAGES_WALKING = [
@@ -14,6 +14,8 @@ class Chicken extends MovableObject {
     IMAGES_DEAD = [
         'img/3.Secuencias_Enemy_básico/Versión_Gallinita (estas salen por orden de la gallina gigantona)/4.G_muerte.png'
     ];
+
+    chicken_sound = new Audio('audio/chicken.mp3');
 
 
     constructor() {
@@ -30,8 +32,12 @@ class Chicken extends MovableObject {
     animate() {
 
         setInterval(() => {
+
+            this.chicken_sound.pause();
+            
             if (!this.isDead()) {
                 this.moveLeft();
+                
             } else if (this.isDead()) {
                 setTimeout(() => {
                     this.loadImage(this.IMAGES_DEAD);
@@ -41,7 +47,6 @@ class Chicken extends MovableObject {
 
         setInterval(() => {
 
-            // this.playAnimation(this.IMAGES_DEAD);
 
             this.playAnimation(this.IMAGES_WALKING);
 

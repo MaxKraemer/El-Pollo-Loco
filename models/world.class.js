@@ -13,6 +13,7 @@ class World {
     bottles = [];
     lostGame = false;
     gameOver = false;
+    game_sound = new Audio('audio/gameMusic.mp3');
 
 
     constructor(canvas, keyboard) {
@@ -23,6 +24,7 @@ class World {
         this.setWorld();
         this.run();
         this.run2();
+        
     }
 
     run() {
@@ -146,7 +148,9 @@ class World {
     }
 
     draw() {
-
+        
+        this.game_sound.play();
+        
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.ctx.translate(this.camera_x, 0);
@@ -175,6 +179,8 @@ class World {
         requestAnimationFrame(function () {
             self.draw();
         });
+
+        
     }
 
     addObjectsToMap(objects) {
