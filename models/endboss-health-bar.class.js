@@ -1,4 +1,4 @@
-class EndbossHealthBar extends StatusBar {
+class EndbossHealth extends StatusBar {
 
     IMAGES = [
         'img/7.Marcadores/Marcadorvida_enemy/Vede.png',

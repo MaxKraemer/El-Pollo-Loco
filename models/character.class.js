@@ -126,6 +126,6 @@ class Character extends MovableObject {
             if (this.isAboveGround()) {
                 this.playAnimation(this.IMAGES_JUMPING);
             }
-        }, 1000/10);
+        }, 1000/20);
     }
 }

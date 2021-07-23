@@ -1,7 +1,7 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
-
+throw_sound = new Audio('audio/throw.mp3');
 
 
 function init() {
@@ -40,6 +40,7 @@ window.addEventListener("keydown", (e) => {
     }
     if(e.key == "d") {
         keyboard.D = true;
+        this.throw_sound.play();
     }
 });
 

@@ -14,8 +14,10 @@ class World {
     lostGame = false;
     gameOver = false;
     game_sound = new Audio('audio/gameMusic.mp3');
-
-
+    game_over = new Audio ('audio/gameOver.mp3');
+    win_sound = new Audio ('audio/win.mp3');
+    
+    
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
@@ -49,6 +51,7 @@ class World {
         if (this.character.isDead()) {
             setTimeout(() => {
                 this.lostGame = true;
+                this.game_over.play();
             }, 100);
         }
     }
@@ -57,26 +60,31 @@ class World {
         if (this.level.returnEndboss().isDead()) {
             setTimeout(() => {
                 this.gameOver = true;
+                this.win_sound.play();
             }, 100);
         }
     }
 
     checkIfGameIsOver() {
         setTimeout(() => {
+
             if (this.lostGame == true) {
                 document.getElementById('lostGame').classList.remove('d-none');
                 // document.getElementById('container').classList.remove('d-none');
             } else if (this.gameOver == true) {
+
+                
                 // document.getElementById('container').classList.remove('d-none');
                 document.getElementById('gameOver').classList.remove('d-none');
             }
         }, 100);
+     
     }
 
     checkCharacterPosition() {
         if (this.character.x == this.level.level_end_x - 200) {
             this.characterReachCheckpoint = true;
-            console.log('CHECKPOINT', this.characterReachCheckpoint);
+           
         }
     }
 
