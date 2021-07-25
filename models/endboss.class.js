@@ -1,11 +1,12 @@
 class Endboss extends MovableObject {
-
+    //endboss position
     height = 450;
     width = 300;
     y = 10;
     speed = 5;
-    energy = 15;
+    energy = 20;
 
+    //endboss images Array
     IMAGES_WALKING = [
         'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/1.Caminata/G1.png',
         'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/1.Caminata/G2.png',
@@ -47,6 +48,8 @@ class Endboss extends MovableObject {
         'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/4.Muerte/G26.png',
     ];
 
+    //load enboss image
+
     constructor() {
         super().loadImage(this.IMAGES_ALERT[0]);
         this.loadImages(this.IMAGES_ALERT);
@@ -60,7 +63,7 @@ class Endboss extends MovableObject {
         this.animate();
     }
   
-
+    //enboss animation
     animate() {
 
         setInterval(() => {

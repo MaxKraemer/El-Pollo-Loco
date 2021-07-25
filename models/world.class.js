@@ -39,6 +39,7 @@ class World {
     }
 
     run2() {
+
         setInterval(() => {
             this.checkCollectedObjects(this.level.coins, this.level.bottles);
             this.checkCharacterPosition();
@@ -57,9 +58,11 @@ class World {
     }
 
     checkIfEndbossIsDead() {
+
         if (this.level.returnEndboss().isDead()) {
             setTimeout(() => {
                 this.gameOver = true;
+                
                 this.win_sound.play();
             }, 100);
         }

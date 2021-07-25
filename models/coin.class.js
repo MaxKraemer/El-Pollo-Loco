@@ -2,9 +2,12 @@ class Coin extends CollectableObject {
     
     width = 150;
     height = 150;
+    y = 20;
 
     IMAGES = [
+        
         'img/8.Coin/Moneda1.png',
+        'img/8.Coin/Moneda2.png',
         
     ];
 
@@ -22,9 +25,13 @@ class Coin extends CollectableObject {
     }
 
     animate() {
+
+        
+    
         setInterval(() => {
-            
+           
             this.playAnimation(this.IMAGES);
+        
         }, 100);
     }
 }

@@ -16,6 +16,8 @@ class Chicken extends MovableObject {
     ];
 
     chicken_sound = new Audio('audio/chicken.mp3');
+   
+    
 
 
     constructor() {
