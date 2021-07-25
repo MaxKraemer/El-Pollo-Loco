@@ -16,6 +16,7 @@ class World {
     game_sound = new Audio('audio/gameMusic.mp3');
     game_over = new Audio ('audio/gameOver.mp3');
     win_sound = new Audio ('audio/win.mp3');
+    chicken_sound = new Audio('audio/chicken.mp3');
     
     
     constructor(canvas, keyboard) {
@@ -61,11 +62,14 @@ class World {
 
         if (this.level.returnEndboss().isDead()) {
             setTimeout(() => {
+                this.game_sound.pause();
                 this.gameOver = true;
                 
                 this.win_sound.play();
+                
             }, 100);
         }
+  
     }
 
     checkIfGameIsOver() {
@@ -75,7 +79,7 @@ class World {
                 document.getElementById('lostGame').classList.remove('d-none');
                 // document.getElementById('container').classList.remove('d-none');
             } else if (this.gameOver == true) {
-
+                
                 
                 // document.getElementById('container').classList.remove('d-none');
                 document.getElementById('gameOver').classList.remove('d-none');
@@ -161,6 +165,8 @@ class World {
     draw() {
         
         this.game_sound.play();
+        this.chicken_sound.play();
+        
         
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 

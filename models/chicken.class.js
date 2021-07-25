@@ -15,7 +15,7 @@ class Chicken extends MovableObject {
         'img/3.Secuencias_Enemy_básico/Versión_Gallinita (estas salen por orden de la gallina gigantona)/4.G_muerte.png'
     ];
 
-    chicken_sound = new Audio('audio/chicken.mp3');
+    
    
     
 
@@ -35,7 +35,7 @@ class Chicken extends MovableObject {
 
         setInterval(() => {
 
-            this.chicken_sound.pause();
+            
             
             if (!this.isDead()) {
                 this.moveLeft();
