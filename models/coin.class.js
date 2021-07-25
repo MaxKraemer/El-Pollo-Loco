@@ -11,7 +11,7 @@ class Coin extends CollectableObject {
         
     ];
 
-    coin_sound = new Audio('audio/coin.mp3');
+    
 
     constructor(x, y) {
 

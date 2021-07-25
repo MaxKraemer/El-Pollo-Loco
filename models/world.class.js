@@ -17,6 +17,7 @@ class World {
     game_over = new Audio ('audio/gameOver.mp3');
     win_sound = new Audio ('audio/win.mp3');
     chicken_sound = new Audio('audio/chicken.mp3');
+    coin_sound = new Audio('audio/coin.mp3');
     
     
     constructor(canvas, keyboard) {
@@ -52,6 +53,7 @@ class World {
     checkIfCharacterIsDead() {
         if (this.character.isDead()) {
             setTimeout(() => {
+                this.game_sound.pause();
                 this.lostGame = true;
                 this.game_over.play();
             }, 100);
@@ -100,9 +102,11 @@ class World {
     }
 
     checkCollectedObjects(coins, bottles) {
+
         for (let i = 0; i < coins.length; i++) {
             const coin = coins[i];
             if (this.character.isColliding(coin)) {
+                this.coin_sound.play();
                 this.coins.push(coin);
                 coins.splice(i, 1);
                 this.coinBar.setPercentage(this.coins.length);

@@ -71,6 +71,7 @@ class Character extends MovableObject {
     walking_sound = new Audio('audio/running.mp3');
     jumping_sound = new Audio('audio/jump.mp3');
     
+    
 
     constructor() {
         super().loadImage('img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-1.png');
@@ -87,11 +88,13 @@ class Character extends MovableObject {
 
         setInterval(() => {
             this.walking_sound.pause();
+            
 
             if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
                 this.moveRight();
                 this.otherDirection = false;
                 this.walking_sound.play();
+                
                 
             }
             if (this.world.keyboard.LEFT && this.x > 0) {
