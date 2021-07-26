@@ -3,7 +3,6 @@ let world;
 let keyboard = new Keyboard();
 throw_sound = new Audio('audio/throw.mp3');
 
-
 function init() {
     
 }
@@ -14,6 +13,8 @@ function startGame() {
     // document.getElementById('container').classList.add('d-none');
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
+    
+
 }
 
 

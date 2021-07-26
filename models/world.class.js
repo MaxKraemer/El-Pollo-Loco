@@ -20,6 +20,7 @@ class World {
     coin_sound = new Audio('audio/coin.mp3');
     
     
+    
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
@@ -28,11 +29,15 @@ class World {
         this.setWorld();
         this.run();
         this.run2();
+        this.game_sound.play();
+        this.chicken_sound.play();
+        
         
     }
 
     run() {
         setInterval(() => {
+
             this.checkCollisions();
             this.checkThrowObjects();
             this.jumpOnEnemy();
@@ -54,6 +59,7 @@ class World {
         if (this.character.isDead()) {
             setTimeout(() => {
                 this.game_sound.pause();
+                this.chicken_sound.pause();
                 this.lostGame = true;
                 this.game_over.play();
             }, 100);
@@ -65,8 +71,8 @@ class World {
         if (this.level.returnEndboss().isDead()) {
             setTimeout(() => {
                 this.game_sound.pause();
+                this.chicken_sound.pause();
                 this.gameOver = true;
-                
                 this.win_sound.play();
                 
             }, 100);
@@ -99,6 +105,7 @@ class World {
 
     setWorld() {
         this.character.world = this;
+        
     }
 
     checkCollectedObjects(coins, bottles) {
@@ -167,11 +174,7 @@ class World {
     }
 
     draw() {
-        
-        this.game_sound.play();
-        this.chicken_sound.play();
-        
-        
+
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.ctx.translate(this.camera_x, 0);
