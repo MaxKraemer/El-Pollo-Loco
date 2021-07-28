@@ -1,16 +1,16 @@
 class CoinBar extends StatusBar {
     IMAGES = [
-        'img/7.Marcadores/Barra/Marcador moneda/Verde/0_.png',
-        'img/7.Marcadores/Barra/Marcador moneda/Verde/20_  copia.png',
-        'img/7.Marcadores/Barra/Marcador moneda/Verde/40_  copia 2.png',
-        'img/7.Marcadores/Barra/Marcador moneda/Verde/60_  copia 2.png',
-        'img/7.Marcadores/Barra/Marcador moneda/Verde/80_  copia 2.png',
-        'img/7.Marcadores/Barra/Marcador moneda/Verde/100_ copia 2.png',
+        '../img/7.Marcadores/Barra/Marcador moneda/Verde/0_.png',
+        '../img/7.Marcadores/Barra/Marcador moneda/Verde/20_  copia.png',
+        '../img/7.Marcadores/Barra/Marcador moneda/Verde/40_  copia 2.png',
+        '../img/7.Marcadores/Barra/Marcador moneda/Verde/60_  copia 2.png',
+        '../img/7.Marcadores/Barra/Marcador moneda/Verde/80_  copia 2.png',
+        '../img/7.Marcadores/Barra/Marcador moneda/Verde/100_ copia 2.png',
     ];
     percentage = 0;
 
     constructor() {
-        super().loadImage('img/7.Marcadores/Barra/Marcador moneda/Verde/0_.png');
+        super().loadImage('../img/7.Marcadores/Barra/Marcador moneda/Verde/0_.png');
         this.loadImages(this.IMAGES);
         this.x = 30;
         this.y = 30;

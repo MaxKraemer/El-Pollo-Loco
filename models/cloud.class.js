@@ -4,7 +4,7 @@ class Cloud extends MovableObject {
 
 
     constructor() {
-        super().loadImage('img/5.Fondo/Capas/4.nubes/1.png');
+        super().loadImage('../img/5.Fondo/Capas/4.nubes/1.png');
         this.x = Math.random() * 2500;
         this.width = 500;
 

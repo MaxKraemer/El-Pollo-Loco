@@ -6,8 +6,8 @@ class Coin extends CollectableObject {
 
     IMAGES = [
         
-        'img/8.Coin/Moneda1.png',
-        'img/8.Coin/Moneda2.png',
+        '../img/8.Coin/Moneda1.png',
+        '../img/8.Coin/Moneda2.png',
         
     ];
 
@@ -15,7 +15,7 @@ class Coin extends CollectableObject {
 
     constructor(x, y) {
 
-        super().loadImage('img/8.Coin/Moneda1.png');
+        super().loadImage('../img/8.Coin/Moneda1.png');
         this.loadImages(this.IMAGES);
 
         this.y = y;
