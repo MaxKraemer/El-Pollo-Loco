@@ -9,7 +9,7 @@ class Bottle extends CollectableObject {
 
         
         
-        super().loadImage('../img/6.botella/2.Botella_enterrada1.png');
+        super().loadImage('img/6.botella/2.Botella_enterrada1.png');
         
 
         this.x = x;

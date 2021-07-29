@@ -2,14 +2,14 @@ class EndbossHealth extends StatusBar {
     
     //Images Health Array
     IMAGES = [
-        '../img/7.Marcadores/Marcadorvida_enemy/Vede.png',
-        '../img/7.Marcadores/Marcadorvida_enemy/Azul.png',
-        '../img/7.Marcadores/Marcadorvida_enemy/Naranja.png'
+        'img/7.Marcadores/Marcadorvida_enemy/Vede.png',
+        'img/7.Marcadores/Marcadorvida_enemy/Azul.png',
+        'img/7.Marcadores/Marcadorvida_enemy/Naranja.png'
     ];
 
     //load Endboss Images
     constructor(x, y) {
-        super().loadImage('../img/7.Marcadores/Marcadorvida_enemy/Naranja.png');
+        super().loadImage('img/7.Marcadores/Marcadorvida_enemy/Naranja.png');
         this.loadImages(this.IMAGES);
 
         this.x = x;
