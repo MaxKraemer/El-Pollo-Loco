@@ -7,7 +7,7 @@ class Coin extends CollectableObject {
     IMAGES = [
         
         'img/8.Coin/Moneda1.png',
-        'img/8.Coin/Moneda2.png',
+        'img/8.Coin/Moneda2.png'
         
     ];
 

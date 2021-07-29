@@ -1,17 +1,17 @@
 class BottleBar extends StatusBar {
 
     IMAGES = [
-        '../img/7.Marcadores/Barra/Marcador_botella/Verde/0_.png',
-        '../img/7.Marcadores/Barra/Marcador_botella/Verde/20_.png',
-        '../img/7.Marcadores/Barra/Marcador_botella/Verde/40_.png',
-        '../img/7.Marcadores/Barra/Marcador_botella/Verde/60_.png',
-        '../img/7.Marcadores/Barra/Marcador_botella/Verde/80_.png',
-        '../img/7.Marcadores/Barra/Marcador_botella/Verde/100_.png'
+        'img/7.Marcadores/Barra/Marcador_botella/Verde/0_.png',
+        'img/7.Marcadores/Barra/Marcador_botella/Verde/20_.png',
+        'img/7.Marcadores/Barra/Marcador_botella/Verde/40_.png',
+        'img/7.Marcadores/Barra/Marcador_botella/Verde/60_.png',
+        'img/7.Marcadores/Barra/Marcador_botella/Verde/80_.png',
+        'img/7.Marcadores/Barra/Marcador_botella/Verde/100_.png'
     ];
     percentage = 0;
 
     constructor() {
-        super().loadImage('../img/7.Marcadores/Barra/Marcador_botella/Verde/0_.png');
+        super().loadImage('img/7.Marcadores/Barra/Marcador_botella/Verde/0_.png');
         this.loadImages(this.IMAGES);
         this.x = 30;
         this.y = 60;
