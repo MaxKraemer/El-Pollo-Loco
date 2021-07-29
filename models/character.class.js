@@ -6,6 +6,7 @@ class Character extends MovableObject {
     energy = 100;
 
     IMAGES_IDLE = [
+        
         'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-1.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-2.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/1.IDLE/IDLE/I-3.png',
